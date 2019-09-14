@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="高中生/CTFer/二进制方向">
-<meta name="keywords" content="高中生&#x2F;CTFer&#x2F;二进制方向">
+  <meta name="description" content="Second…">
+<meta name="keywords" content="逆向学习,搬砖工,汇编">
 <meta property="og:type" content="article">
-<meta property="og:title" content="晚来秋">
-<meta property="og:url" content="http://yoursite.com/2019/09/14/stu/index.html">
+<meta property="og:title" content="8086汇编(二)">
+<meta property="og:url" content="http://yoursite.com/2019/08/30/stu/index.html">
 <meta property="og:site_name" content="晚来秋">
-<meta property="og:description" content="高中生/CTFer/二进制方向">
+<meta property="og:description" content="Second…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-14T13:58:17.838Z">
+<meta property="og:updated_time" content="2019-09-14T16:12:46.700Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="晚来秋">
-<meta name="twitter:description" content="高中生/CTFer/二进制方向">
-  <link rel="canonical" href="http://yoursite.com/2019/09/14/stu/">
+<meta name="twitter:title" content="8086汇编(二)">
+<meta name="twitter:description" content="Second…">
+  <link rel="canonical" href="http://yoursite.com/2019/08/30/stu/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title> | 晚来秋</title>
+  <title>8086汇编(二) | 晚来秋</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -220,7 +220,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/14/stu/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/30/stu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晚来秋">
@@ -232,7 +232,7 @@
       <meta itemprop="name" content="晚来秋">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
+        <h1 class="post-title" itemprop="name headline">8086汇编(二)
 
           
         </h1>
@@ -248,7 +248,32 @@
                 
               
 
-              <time title="创建时间：2019-09-14 21:58:17" itemprop="dateCreated datePublished" datetime="2019-09-14T21:58:17+08:00">2019-09-14</time>
+              <time title="创建时间：2019-08-30 18:02:20" itemprop="dateCreated datePublished" datetime="2019-08-30T18:02:20+08:00">2019-08-30</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-09-15 00:12:46" itemprop="dateModified" datetime="2019-09-15T00:12:46+08:00">2019-09-15</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reserve/" itemprop="url" rel="index"><span itemprop="name">Reserve</span></a></span>
+
+                
+                
+              
             </span>
           
 
@@ -271,7 +296,44 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>Second…</p>
+<a id="more"></a>
+<h1 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h1><h2 id="数据寄存器"><a href="#数据寄存器" class="headerlink" title="数据寄存器"></a>数据寄存器</h2><ul>
+<li><p>AH&amp;AL=AX(accumulator)：累加寄存器，常用于运算;在乘除等指令中指定用来存放操作数，另外,所有的I/O指令都使用这一寄存器与外界设备传送数据。</p>
+</li>
+<li><p>BH&amp;BL=BX(base)：基址寄存器，常用于地址索引.</p>
+</li>
+<li><p>CH&amp;CL=CX(count)：计数寄存器，常用于计数；常用于保存计算值，如在移位指令,循环(loop)和串处理指令中用作隐含的计数器.</p>
+</li>
+<li><p>DH&amp;DL=DX(data)：数据寄存器，常用于数据传递。</p>
+</li>
+</ul>
+<p>他们的特点是，这4个16位的寄存器可以分为高8位: AH, BH, CH, DH.以及低八位：AL,BL,CL,DL。这2组8位寄存器可以分别寻址，并单独使用。</p>
+<h2 id="指针寄存器和变址寄存器"><a href="#指针寄存器和变址寄存器" class="headerlink" title="指针寄存器和变址寄存器"></a>指针寄存器和变址寄存器</h2><ul>
+<li>SP（Stack Pointer）：堆栈指针，与SS配合使用，可指向目前的堆栈位置</li>
+<li>BP（Base Pointer）：基址指针寄存器，可用作SS的一个相对基址位置</li>
+<li>SI（Source Index）：源变址寄存器，可用来存放相对于DS段之源变址指针</li>
+<li>DI（Destination Index）：目的变址寄存器，可用来存放相对于ES 段之目的变址指针。</li>
+</ul>
+<p>这4个16位寄存器只能按16位进行存取操作，主要用来形成操作数的地址，用于堆栈操作和变址运算中计算操作数的有效地址。</p>
+<h1 id="几条常用的汇编指令"><a href="#几条常用的汇编指令" class="headerlink" title="几条常用的汇编指令"></a>几条常用的汇编指令</h1><blockquote>
+<p>mov ax,FFFF<br>//移动指令</p>
+</blockquote>
+<blockquote>
+<p>add ax,bx<br>//累加指令 ax = ax + bx</p>
+</blockquote>
+<blockquote>
+<p>sub ax,bx<br>//相减 ax = ax - bx</p>
+</blockquote>
+<h1 id="物理地址"><a href="#物理地址" class="headerlink" title="物理地址"></a>物理地址</h1><ul>
+<li><p>在存储器里以字节为单位存储信息，为正确地存放或取得信息，每一个字节单元给以一个唯一的存储器地址，称为物理地 址（Physical Address），又叫实际地址或绝对地址。</p>
+</li>
+<li><p>8086是16位cpu，地址总线是20位 • 物理地址=段地址*10H+偏移地址 </p>
+</li>
+<li><p>CS：2000H，IP：0033H • 物理地址=2000Hx10H+0033H=20033H</p>
+</li>
+</ul>
+
     </div>
 
     
@@ -287,7 +349,7 @@
     <strong>本文作者： </strong>晚来秋</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/09/14/stu/">http://yoursite.com/2019/09/14/stu/</a>
+    <a href="http://yoursite.com/2019/08/30/stu/" title="8086汇编(二)">http://yoursite.com/2019/08/30/stu/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -297,14 +359,27 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/逆向学习/" rel="tag"># 逆向学习</a>
+            
+              <a href="/tags/搬砖工/" rel="tag"># 搬砖工</a>
+            
+              <a href="/tags/汇编/" rel="tag"># 汇编</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/30/First_Test/" rel="next" title="8086汇编">
-                  <i class="fa fa-chevron-left"></i> 8086汇编
+                <a href="/2019/08/30/First_Test/" rel="next" title="8086汇编(一)">
+                  <i class="fa fa-chevron-left"></i> 8086汇编(一)
                 </a>
               
             </div>
@@ -360,6 +435,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器"><span class="nav-number">1.</span> <span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据寄存器"><span class="nav-number">1.1.</span> <span class="nav-text">数据寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针寄存器和变址寄存器"><span class="nav-number">1.2.</span> <span class="nav-text">指针寄存器和变址寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几条常用的汇编指令"><span class="nav-number">2.</span> <span class="nav-text">几条常用的汇编指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理地址"><span class="nav-number">3.</span> <span class="nav-text">物理地址</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

@@ -55,18 +55,22 @@
   };
 </script>
 
-  <meta name="description" content="汇编语言">
+  <meta name="description" content="First…">
 <meta name="keywords" content="逆向学习,搬砖工,汇编">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8086汇编">
+<meta property="og:title" content="8086汇编(一)">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/First_Test/index.html">
 <meta property="og:site_name" content="晚来秋">
-<meta property="og:description" content="汇编语言">
+<meta property="og:description" content="First…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-14T13:26:35.007Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/30/First_Test/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/30/First_Test/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/30/First_Test/3.png">
+<meta property="og:updated_time" content="2019-09-14T15:32:18.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8086汇编">
-<meta name="twitter:description" content="汇编语言">
+<meta name="twitter:title" content="8086汇编(一)">
+<meta name="twitter:description" content="First…">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/30/First_Test/2.png">
   <link rel="canonical" href="http://yoursite.com/2019/08/30/First_Test/">
 
 
@@ -81,7 +85,7 @@
   };
 </script>
 
-  <title>8086汇编 | 晚来秋</title>
+  <title>8086汇编(一) | 晚来秋</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -232,7 +236,7 @@
       <meta itemprop="name" content="晚来秋">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">8086汇编
+        <h1 class="post-title" itemprop="name headline">8086汇编(一)
 
           
         </h1>
@@ -259,7 +263,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-14 21:26:35" itemprop="dateModified" datetime="2019-09-14T21:26:35+08:00">2019-09-14</time>
+                <time title="修改时间：2019-09-14 23:32:18" itemprop="dateModified" datetime="2019-09-14T23:32:18+08:00">2019-09-14</time>
               </span>
             
           
@@ -296,10 +300,51 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>汇编语言</p>
+        <p>First…</p>
 <a id="more"></a>
-<p>运算器<br>控制器<br>寄存器<br>通过汇编指令来修改寄存器的内容来控制cpu<br>AX BX CX DX<br>通用寄存器一般存放数据</p>
-<p>ps:寄存器是互相独立的<br>AH和AL<br>注意寄存器能够写的最大值,一个字节是255<br>AX = 65535 = FFFF</p>
+<h1 id="1-计算机组成部分"><a href="#1-计算机组成部分" class="headerlink" title="1.计算机组成部分"></a>1.计算机组成部分</h1><p>主要分为五个部分:</p>
+<ol>
+<li>控制器</li>
+<li>运算器</li>
+<li>存储器</li>
+<li>输入</li>
+<li>输出</li>
+</ol>
+<p><img src="2.png" alt="..."></p>
+<h1 id="2-CPU的内部架构和工作原理"><a href="#2-CPU的内部架构和工作原理" class="headerlink" title="2.CPU的内部架构和工作原理"></a>2.CPU的内部架构和工作原理</h1><ol>
+<li>控制单元</li>
+<li>存储单元</li>
+<li>运算单元<br><img src="1.png" alt="..."></li>
+</ol>
+<h1 id="3-总线"><a href="#3-总线" class="headerlink" title="3.总线"></a>3.总线</h1><h2 id="数据总线"><a href="#数据总线" class="headerlink" title="数据总线"></a>数据总线</h2><ol>
+<li><p>是CPU与内存或其他器件之间的数据传送的通道。</p>
+</li>
+<li><p>数据总线的宽度决定了CPU和外界的数据传送速度。</p>
+</li>
+<li><p>每条传输线一次只能传输1位二进制数据。eg: 8根数据线一次可传送一个8位二进制数据(即一个字节)。 </p>
+</li>
+<li><p>数据总线是数据线数量之和。 </p>
+</li>
+</ol>
+<h2 id="地址总线"><a href="#地址总线" class="headerlink" title="地址总线"></a>地址总线</h2><ol>
+<li><p>CPU是通过地址总线来指定存储单元的。 </p>
+</li>
+<li><p>地址总线决定了cpu所能访问的最大内存空间的大小。eg: 10根地址线能访问的最大的内存为1024位二进制数据(1B) </p>
+</li>
+<li><p>地址总线是地址线数量之和。</p>
+<h2 id="控制总线"><a href="#控制总线" class="headerlink" title="控制总线"></a>控制总线</h2></li>
+<li><p>CPU通过控制总线对外部器件进行控制。</p>
+</li>
+<li><p>控制总线的宽度决定了CPU对外部器件的控制能力。 </p>
+</li>
+<li><p>控制总线是控制线数量之和。</p>
+</li>
+</ol>
+<h1 id="内存地址空间"><a href="#内存地址空间" class="headerlink" title="内存地址空间"></a>内存地址空间</h1><p><img src="3.png" alt="..."></p>
+<h1 id="内存的认识"><a href="#内存的认识" class="headerlink" title="内存的认识"></a>内存的认识</h1><p>CPU通过内存编号的读写,然后控制部件</p>
+<p>cpu将所有部件看成是内存地址</p>
+<p>ROM:         只允许读取,不允许写入     –不通电数据依然保存</p>
+<p>RAM:        允许读取,允许写入     –不通电数据则消失</p>
 
     </div>
 
@@ -316,7 +361,7 @@
     <strong>本文作者： </strong>晚来秋</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/08/30/First_Test/" title="8086汇编">http://yoursite.com/2019/08/30/First_Test/</a>
+    <a href="http://yoursite.com/2019/08/30/First_Test/" title="8086汇编(一)">http://yoursite.com/2019/08/30/First_Test/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -351,8 +396,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/09/14/stu/" rel="prev" title="">
-                   <i class="fa fa-chevron-right"></i>
+                <a href="/2019/08/30/stu/" rel="prev" title="8086汇编(二)">
+                  8086汇编(二) <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -402,6 +447,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-计算机组成部分"><span class="nav-number">1.</span> <span class="nav-text">1.计算机组成部分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-CPU的内部架构和工作原理"><span class="nav-number">2.</span> <span class="nav-text">2.CPU的内部架构和工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-总线"><span class="nav-number">3.</span> <span class="nav-text">3.总线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据总线"><span class="nav-number">3.1.</span> <span class="nav-text">数据总线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#地址总线"><span class="nav-number">3.2.</span> <span class="nav-text">地址总线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制总线"><span class="nav-number">3.3.</span> <span class="nav-text">控制总线</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存地址空间"><span class="nav-number">4.</span> <span class="nav-text">内存地址空间</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存的认识"><span class="nav-number">5.</span> <span class="nav-text">内存的认识</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
