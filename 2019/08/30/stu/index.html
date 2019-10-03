@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="晚来秋">
 <meta property="og:description" content="Second…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-14T16:12:46.700Z">
+<meta property="og:updated_time" content="2019-10-03T14:39:54.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8086汇编(二)">
 <meta name="twitter:description" content="Second…">
@@ -259,7 +259,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-09-15 00:12:46" itemprop="dateModified" datetime="2019-09-15T00:12:46+08:00">2019-09-15</time>
+                <time title="修改时间：2019-10-03 22:39:54" itemprop="dateModified" datetime="2019-10-03T22:39:54+08:00">2019-10-03</time>
               </span>
             
           
@@ -333,6 +333,18 @@
 <li><p>CS：2000H，IP：0033H • 物理地址=2000Hx10H+0033H=20033H</p>
 </li>
 </ul>
+<h1 id="CS-IP"><a href="#CS-IP" class="headerlink" title="CS.IP"></a>CS.IP</h1><h2 id="CS-存放指令的段地址-IP存放指令的偏移地址"><a href="#CS-存放指令的段地址-IP存放指令的偏移地址" class="headerlink" title="CS 存放指令的段地址, IP存放指令的偏移地址"></a>CS 存放指令的段地址, IP存放指令的偏移地址</h2><h2 id="任意时刻CS-IP指向的内容当作指令执行"><a href="#任意时刻CS-IP指向的内容当作指令执行" class="headerlink" title="任意时刻CS:IP指向的内容当作指令执行"></a>任意时刻CS:IP指向的内容当作指令执行</h2><h2 id="jmp"><a href="#jmp" class="headerlink" title="jmp"></a>jmp</h2><ul>
+<li><p>同时修改CS IP </p>
+<blockquote>
+<p>jmp 段地址: 偏移地址</p>
+</blockquote>
+</li>
+<li><p>仅修改IP的内容</p>
+<blockquote>
+<p>jmp 合法寄存器</p>
+</blockquote>
+</li>
+</ul>
 
     </div>
 
@@ -378,8 +390,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/30/First_Test/" rel="next" title="8086汇编(一)">
-                  <i class="fa fa-chevron-left"></i> 8086汇编(一)
+                <a href="/2019/08/30/rd/" rel="next" title="8086���(��)">
+                  <i class="fa fa-chevron-left"></i> 8086���(��)
                 </a>
               
             </div>
@@ -387,6 +399,10 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/08/30/First_Test/" rel="prev" title="8086汇编(一)">
+                  8086汇编(一) <i class="fa fa-chevron-right"></i>
+                </a>
               
             </div>
           </div>
@@ -435,7 +451,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器"><span class="nav-number">1.</span> <span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据寄存器"><span class="nav-number">1.1.</span> <span class="nav-text">数据寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针寄存器和变址寄存器"><span class="nav-number">1.2.</span> <span class="nav-text">指针寄存器和变址寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几条常用的汇编指令"><span class="nav-number">2.</span> <span class="nav-text">几条常用的汇编指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理地址"><span class="nav-number">3.</span> <span class="nav-text">物理地址</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器"><span class="nav-number">1.</span> <span class="nav-text">寄存器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据寄存器"><span class="nav-number">1.1.</span> <span class="nav-text">数据寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针寄存器和变址寄存器"><span class="nav-number">1.2.</span> <span class="nav-text">指针寄存器和变址寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#几条常用的汇编指令"><span class="nav-number">2.</span> <span class="nav-text">几条常用的汇编指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#物理地址"><span class="nav-number">3.</span> <span class="nav-text">物理地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CS-IP"><span class="nav-number">4.</span> <span class="nav-text">CS.IP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS-存放指令的段地址-IP存放指令的偏移地址"><span class="nav-number">4.1.</span> <span class="nav-text">CS 存放指令的段地址, IP存放指令的偏移地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#任意时刻CS-IP指向的内容当作指令执行"><span class="nav-number">4.2.</span> <span class="nav-text">任意时刻CS:IP指向的内容当作指令执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jmp"><span class="nav-number">4.3.</span> <span class="nav-text">jmp</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -453,7 +469,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -487,7 +503,13 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
