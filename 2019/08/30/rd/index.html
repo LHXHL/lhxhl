@@ -56,16 +56,16 @@
 </script>
 
   <meta name="description" content="Third…">
-<meta name="keywords" content="����ѧϰ,��ש��,���">
+<meta name="keywords" content="逆向学习,搬砖工,汇编">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8086���(��)">
+<meta property="og:title" content="8086汇编(三)">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/rd/index.html">
 <meta property="og:site_name" content="晚来秋">
 <meta property="og:description" content="Third…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-03T14:57:53.055Z">
+<meta property="og:updated_time" content="2019-10-03T15:04:33.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8086���(��)">
+<meta name="twitter:title" content="8086汇编(三)">
 <meta name="twitter:description" content="Third…">
   <link rel="canonical" href="http://yoursite.com/2019/08/30/rd/">
 
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>8086���(��) | 晚来秋</title>
+  <title>8086汇编(三) | 晚来秋</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -232,7 +232,7 @@
       <meta itemprop="name" content="晚来秋">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">8086���(��)
+        <h1 class="post-title" itemprop="name headline">8086汇编(三)
 
           
         </h1>
@@ -259,7 +259,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-10-03 22:57:53" itemprop="dateModified" datetime="2019-10-03T22:57:53+08:00">2019-10-03</time>
+                <time title="修改时间：2019-10-03 23:04:33" itemprop="dateModified" datetime="2019-10-03T23:04:33+08:00">2019-10-03</time>
               </span>
             
           
@@ -298,42 +298,42 @@
       
         <p>Third…</p>
 <a id="more"></a>
-<h1 id="�J���-�ڴ����"><a href="#�J���-�ڴ����" class="headerlink" title="�Ĵ���(�ڴ����)"></a>�Ĵ���(�ڴ����)</h1><h2 id="һ"><a href="#һ" class="headerlink" title="(һ)"></a>(һ)</h2><h3 id="1-�ֵ�Ԫ"><a href="#1-�ֵ�Ԫ" class="headerlink" title="1.�ֵ�Ԫ:"></a>1.�ֵ�Ԫ:</h3><p>��������ַ�������ڴ浥Ԫ���.</p>
-<h3 id="2-DS��-address"><a href="#2-DS��-address" class="headerlink" title="2.DS��[address]"></a>2.DS��[address]</h3><p>DS ͨ����ŷ������ݵĶμĴ���</p>
-<p>[…] ��ʾ�ڴ浥Ԫ</p>
+<h1 id="寄存器-内存访问"><a href="#寄存器-内存访问" class="headerlink" title="寄存器(内存访问)"></a>寄存器(内存访问)</h1><h2 id="一"><a href="#一" class="headerlink" title="(一)"></a>(一)</h2><h3 id="1-字单元"><a href="#1-字单元" class="headerlink" title="1.字单元:"></a>1.字单元:</h3><p>由两个地址连续的内存单元组成.</p>
+<h3 id="2-DS和-address"><a href="#2-DS和-address" class="headerlink" title="2.DS和[address]"></a>2.DS和[address]</h3><p>DS 通常存放访问数据的段寄存器</p>
+<p>[…] 表示内存单元</p>
 <h2 id="ps"><a href="#ps" class="headerlink" title="ps:"></a>ps:</h2><blockquote>
 <p>mov bx,1000H</p>
 </blockquote>
 <blockquote>
 <p>mov ds,bx </p>
 </blockquote>
-<p>8086��֧��ֱ�ӽ���������μĴ���</p>
+<p>8086不支持直接将数据送入段寄存器</p>
 <blockquote>
-<p>mov ds,1000H<br> //�Ƿ���</p>
+<p>mov ds,1000H<br> //非法的</p>
 </blockquote>
-<h2 id="��"><a href="#��" class="headerlink" title="(��)"></a>(��)</h2><h2 id="ջ"><a href="#ջ" class="headerlink" title="ջ"></a>ջ</h2><h3 id="ջ�Ĳ�������-LIFO-Last-In-First-Out-�L����"><a href="#ջ�Ĳ�������-LIFO-Last-In-First-Out-�L����" class="headerlink" title="ջ�Ĳ�������: LIFO(Last In First Out) �Ƚ����"></a>ջ�Ĳ�������: LIFO(Last In First Out) �Ƚ����</h3><h3 id="��ջָ��"><a href="#��ջָ��" class="headerlink" title="��ջָ��"></a>��ջָ��</h3><blockquote>
-<p>push �Ĵ���/�μĴ���/�ڴ浥Ԫ</p>
+<h2 id="二"><a href="#二" class="headerlink" title="(二)"></a>(二)</h2><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><h3 id="栈的操作规则-LIFO-Last-In-First-Out-先进后出"><a href="#栈的操作规则-LIFO-Last-In-First-Out-先进后出" class="headerlink" title="栈的操作规则: LIFO(Last In First Out) 先进后出"></a>栈的操作规则: LIFO(Last In First Out) 先进后出</h3><h3 id="入栈指令"><a href="#入栈指令" class="headerlink" title="入栈指令"></a>入栈指令</h3><blockquote>
+<p>push 寄存器/段寄存器/内存单元</p>
 </blockquote>
-<h3 id="��ջָ��-1"><a href="#��ջָ��-1" class="headerlink" title="��ջָ��"></a>��ջָ��</h3><blockquote>
-<p>pop ͬ��</p>
+<h3 id="出栈指令"><a href="#出栈指令" class="headerlink" title="出栈指令"></a>出栈指令</h3><blockquote>
+<p>pop 同上</p>
 </blockquote>
-<p>ps:��������Ϊ��λ����</p>
-<h2 id="SS-SP"><a href="#SS-SP" class="headerlink" title="SS:SP"></a>SS:SP</h2><h3 id="����ʱ��-SS-SPָ��ջ��Ԫ��"><a href="#����ʱ��-SS-SPָ��ջ��Ԫ��" class="headerlink" title="����ʱ��,SS:SPָ��ջ��Ԫ��."></a>����ʱ��,SS:SPָ��ջ��Ԫ��.</h3><h3 id="push��popִ��-�����еo�ջ����ַ"><a href="#push��popִ��-�����еo�ջ����ַ" class="headerlink" title="push��popִ��,�����еõ�ջ����ַ"></a>push��popִ��,�����еõ�ջ����ַ</h3><h2 id="ִ�й���"><a href="#ִ�й���" class="headerlink" title="ִ�й���"></a>ִ�й���</h2><blockquote>
+<p>ps:都是以字为单位进行</p>
+<h2 id="SS-SP"><a href="#SS-SP" class="headerlink" title="SS:SP"></a>SS:SP</h2><h3 id="任意时刻-SS-SP指向栈顶元素"><a href="#任意时刻-SS-SP指向栈顶元素" class="headerlink" title="任意时刻,SS:SP指向栈顶元素."></a>任意时刻,SS:SP指向栈顶元素.</h3><h3 id="push和pop执行-从其中得到栈顶地址"><a href="#push和pop执行-从其中得到栈顶地址" class="headerlink" title="push和pop执行,从其中得到栈顶地址"></a>push和pop执行,从其中得到栈顶地址</h3><h2 id="执行过程"><a href="#执行过程" class="headerlink" title="执行过程"></a>执行过程</h2><blockquote>
 <p>push ax</p>
 </blockquote>
 <blockquote>
-<p>SP = SP-2 SS:IP�Ե�ǰջ��ǰ��ĵ�ԪΪ�µ�ջ��</p>
+<p>SP = SP-2 SS:IP以当前栈顶前面的单元为新的栈顶</p>
 </blockquote>
 <blockquote>
-<p>Ȼ��ax��������ջ��</p>
+<p>然后将ax内容送入栈中</p>
 </blockquote>
 <blockquote>
 <p>pop ax</p>
 </blockquote>
 <blockquote>
-<p>���෴ �ȳ�ջ���� SP = SP+2</p>
+<p>则相反 先出栈而后 SP = SP+2</p>
 </blockquote>
-<h2 id="ջ������-ջ���"><a href="#ջ������-ջ���" class="headerlink" title="ջ������(ջ���)"></a>ջ������(ջ���)</h2><h3 id="���ʱ��Ҫע����ջ���ջ����"><a href="#���ʱ��Ҫע����ջ���ջ����" class="headerlink" title="���ʱ��Ҫע����ջ���ջ����"></a>���ʱ��Ҫע����ջ���ջ����</h3>
+<h2 id="栈顶超界-栈溢出"><a href="#栈顶超界-栈溢出" class="headerlink" title="栈顶超界(栈溢出)"></a>栈顶超界(栈溢出)</h2><h3 id="编程时需要注意入栈与出栈数据"><a href="#编程时需要注意入栈与出栈数据" class="headerlink" title="编程时需要注意入栈与出栈数据"></a>编程时需要注意入栈与出栈数据</h3>
     </div>
 
     
@@ -349,7 +349,7 @@
     <strong>本文作者： </strong>晚来秋</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2019/08/30/rd/" title="8086���(��)">http://yoursite.com/2019/08/30/rd/</a>
+    <a href="http://yoursite.com/2019/08/30/rd/" title="8086汇编(三)">http://yoursite.com/2019/08/30/rd/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -364,11 +364,11 @@
           
           <div class="post-tags">
             
-              <a href="/tags/����ѧϰ/" rel="tag"># ����ѧϰ</a>
+              <a href="/tags/逆向学习/" rel="tag"># 逆向学习</a>
             
-              <a href="/tags/��ש��/" rel="tag"># ��ש��</a>
+              <a href="/tags/搬砖工/" rel="tag"># 搬砖工</a>
             
-              <a href="/tags/���/" rel="tag"># ���</a>
+              <a href="/tags/汇编/" rel="tag"># 汇编</a>
             
           </div>
         
@@ -378,14 +378,18 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/08/30/stu/" rel="next" title="8086汇编(二)">
+                  <i class="fa fa-chevron-left"></i> 8086汇编(二)
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/08/30/stu/" rel="prev" title="8086汇编(二)">
-                  8086汇编(二) <i class="fa fa-chevron-right"></i>
+                <a href="/2019/08/30/First_Test/" rel="prev" title="8086汇编(一)">
+                  8086汇编(一) <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -435,7 +439,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#�J���-�ڴ����"><span class="nav-number">1.</span> <span class="nav-text">�Ĵ���(�ڴ����)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#һ"><span class="nav-number">1.1.</span> <span class="nav-text">(һ)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-�ֵ�Ԫ"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.�ֵ�Ԫ:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-DS��-address"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.DS��[address]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps"><span class="nav-number">1.2.</span> <span class="nav-text">ps:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#��"><span class="nav-number">1.3.</span> <span class="nav-text">(��)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ջ"><span class="nav-number">1.4.</span> <span class="nav-text">ջ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ջ�Ĳ�������-LIFO-Last-In-First-Out-�L����"><span class="nav-number">1.4.1.</span> <span class="nav-text">ջ�Ĳ�������: LIFO(Last In First Out) �Ƚ����</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��ջָ��"><span class="nav-number">1.4.2.</span> <span class="nav-text">��ջָ��</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#��ջָ��-1"><span class="nav-number">1.4.3.</span> <span class="nav-text">��ջָ��</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SS-SP"><span class="nav-number">1.5.</span> <span class="nav-text">SS:SP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#����ʱ��-SS-SPָ��ջ��Ԫ��"><span class="nav-number">1.5.1.</span> <span class="nav-text">����ʱ��,SS:SPָ��ջ��Ԫ��.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push��popִ��-�����еo�ջ����ַ"><span class="nav-number">1.5.2.</span> <span class="nav-text">push��popִ��,�����еõ�ջ����ַ</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ִ�й���"><span class="nav-number">1.6.</span> <span class="nav-text">ִ�й���</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ջ������-ջ���"><span class="nav-number">1.7.</span> <span class="nav-text">ջ������(ջ���)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#���ʱ��Ҫע����ջ���ջ����"><span class="nav-number">1.7.1.</span> <span class="nav-text">���ʱ��Ҫע����ջ���ջ����</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#寄存器-内存访问"><span class="nav-number">1.</span> <span class="nav-text">寄存器(内存访问)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一"><span class="nav-number">1.1.</span> <span class="nav-text">(一)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-字单元"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.字单元:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-DS和-address"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.DS和[address]</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ps"><span class="nav-number">1.2.</span> <span class="nav-text">ps:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二"><span class="nav-number">1.3.</span> <span class="nav-text">(二)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈"><span class="nav-number">1.4.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#栈的操作规则-LIFO-Last-In-First-Out-先进后出"><span class="nav-number">1.4.1.</span> <span class="nav-text">栈的操作规则: LIFO(Last In First Out) 先进后出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#入栈指令"><span class="nav-number">1.4.2.</span> <span class="nav-text">入栈指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出栈指令"><span class="nav-number">1.4.3.</span> <span class="nav-text">出栈指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SS-SP"><span class="nav-number">1.5.</span> <span class="nav-text">SS:SP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#任意时刻-SS-SP指向栈顶元素"><span class="nav-number">1.5.1.</span> <span class="nav-text">任意时刻,SS:SP指向栈顶元素.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push和pop执行-从其中得到栈顶地址"><span class="nav-number">1.5.2.</span> <span class="nav-text">push和pop执行,从其中得到栈顶地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行过程"><span class="nav-number">1.6.</span> <span class="nav-text">执行过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈顶超界-栈溢出"><span class="nav-number">1.7.</span> <span class="nav-text">栈顶超界(栈溢出)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程时需要注意入栈与出栈数据"><span class="nav-number">1.7.1.</span> <span class="nav-text">编程时需要注意入栈与出栈数据</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -487,13 +491,7 @@
         
           
         
-          
-        
-          
-        
-          
-        
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         
       </div>
