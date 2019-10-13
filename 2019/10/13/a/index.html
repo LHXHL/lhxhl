@@ -55,21 +55,21 @@
   };
 </script>
 
-  <meta name="description" content="Hexo 使用网络图片">
-<meta name="keywords" content="搬砖工,学习">
+  <meta name="description" content="EFlags">
+<meta name="keywords" content="逆向学习,搬砖工,汇编">
 <meta property="og:type" content="article">
-<meta property="og:title" content="插入图片">
-<meta property="og:url" content="https://lhxhl.github.io/2019/10/13/sd/index.html">
+<meta property="og:title" content="标志寄存器">
+<meta property="og:url" content="https://lhxhl.github.io/2019/10/13/a/index.html">
 <meta property="og:site_name" content="晚来秋">
-<meta property="og:description" content="Hexo 使用网络图片">
+<meta property="og:description" content="EFlags">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.loli.net/2019/10/13/4K5dlemnOFukSWJ.jpg">
-<meta property="og:updated_time" content="2019-10-13T01:01:49.860Z">
+<meta property="og:image" content="https://i.loli.net/2019/10/13/RgzubYND6w2l49s.jpg">
+<meta property="og:updated_time" content="2019-10-13T08:58:12.953Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="插入图片">
-<meta name="twitter:description" content="Hexo 使用网络图片">
-<meta name="twitter:image" content="https://i.loli.net/2019/10/13/4K5dlemnOFukSWJ.jpg">
-  <link rel="canonical" href="https://lhxhl.github.io/2019/10/13/sd/">
+<meta name="twitter:title" content="标志寄存器">
+<meta name="twitter:description" content="EFlags">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/13/RgzubYND6w2l49s.jpg">
+  <link rel="canonical" href="https://lhxhl.github.io/2019/10/13/a/">
 
 
 <script id="page-configurations">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title>插入图片 | 晚来秋</title>
+  <title>标志寄存器 | 晚来秋</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -222,7 +222,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://lhxhl.github.io/2019/10/13/sd/">
+    <link itemprop="mainEntityOfPage" href="https://lhxhl.github.io/2019/10/13/a/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晚来秋">
@@ -234,7 +234,7 @@
       <meta itemprop="name" content="晚来秋">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">插入图片
+        <h1 class="post-title" itemprop="name headline">标志寄存器
 
           
         </h1>
@@ -250,7 +250,7 @@
                 
               
 
-              <time title="创建时间：2019-10-13 00:00:00 / 修改时间：09:01:49" itemprop="dateCreated datePublished" datetime="2019-10-13T00:00:00+08:00">2019-10-13</time>
+              <time title="创建时间：2019-10-13 14:12:23 / 修改时间：16:58:12" itemprop="dateCreated datePublished" datetime="2019-10-13T14:12:23+08:00">2019-10-13</time>
             </span>
           
             
@@ -263,7 +263,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Study/" itemprop="url" rel="index"><span itemprop="name">Study</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reserve/" itemprop="url" rel="index"><span itemprop="name">Reserve</span></a></span>
 
                 
                 
@@ -290,16 +290,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Hexo-使用网络图片"><a href="#Hexo-使用网络图片" class="headerlink" title="Hexo 使用网络图片"></a>Hexo 使用网络图片</h1><a id="more"></a>
+        <h1 id="EFlags"><a href="#EFlags" class="headerlink" title="EFlags"></a>EFlags</h1><a id="more"></a>
+<p><img src="https://i.loli.net/2019/10/13/RgzubYND6w2l49s.jpg" alt="1.jpg"></p>
+<h2 id="一、运算结果标志位"><a href="#一、运算结果标志位" class="headerlink" title="一、运算结果标志位"></a>一、运算结果标志位</h2><h2 id="1、进位标志CF-Carry-Flag"><a href="#1、进位标志CF-Carry-Flag" class="headerlink" title="1、进位标志CF(Carry Flag)"></a>1、进位标志CF(Carry Flag)</h2><p>进位标志CF主要用来反映运算是否产生进位或借位。如果运算结果的最高位产生了一个进位或借位，那么，其值为1，否则其值为0。</p>
+<p>使用该标志位的情况有：多字(字节)数的加减运算，无符号数的大小比较运算，移位操作，字(字节)之间移位，专门改变CF值的指令等。</p>
+<h2 id="2、奇偶标志PF-Parity-Flag"><a href="#2、奇偶标志PF-Parity-Flag" class="headerlink" title="2、奇偶标志PF(Parity Flag)"></a>2、奇偶标志PF(Parity Flag)</h2><p>奇偶标志PF用于反映运算结果中“1”的个数的奇偶性。如果“1”的个数为偶数，则PF的值为1，否则其值为0。</p>
+<p>利用PF可进行奇偶校验检查，或产生奇偶校验位。在数据传送过程中，为了提供传送的可靠性，如果采用奇偶校验的方法，就可使用该标志位。</p>
+<h2 id="3、辅助进位标志AF-Auxiliary-Carry-Flag"><a href="#3、辅助进位标志AF-Auxiliary-Carry-Flag" class="headerlink" title="3、辅助进位标志AF(Auxiliary Carry Flag)"></a>3、辅助进位标志AF(Auxiliary Carry Flag)</h2><p>在发生下列情况时，辅助进位标志AF的值被置为1，否则其值为0：</p>
 <ul>
-<li><h2 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h2></li>
-<li><h3 id="图床设置"><a href="#图床设置" class="headerlink" title="图床设置"></a>图床设置</h3><h3 id="以下是测试"><a href="#以下是测试" class="headerlink" title="以下是测试"></a>以下是测试</h3><p><img src="https://i.loli.net/2019/10/13/4K5dlemnOFukSWJ.jpg" alt="01.jpg"></p>
-</li>
-<li><h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="https://esbi.com.cn/2019/01/18/Hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/" target="_blank" rel="noopener">https://esbi.com.cn/2019/01/18/Hexo%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87/</a></p>
-</li>
-<li><h2 id="使用的图床"><a href="#使用的图床" class="headerlink" title="使用的图床"></a>使用的图床</h2><p><a href="https://sm.ms/" target="_blank" rel="noopener">https://sm.ms/</a></p>
-</li>
+<li>(1)、在字操作时，发生低字节向高字节进位或借位时；</li>
+<li>(2)、在字节操作时，发生低4位向高4位进位或借位时。</li>
 </ul>
+<p>对以上6个运算结果标志位，在一般编程情况下，标志位CF、ZF、SF和OF的使用频率较高，而标志位PF和AF的使用频率较低。</p>
+<h2 id="4、零标志ZF-Zero-Flag"><a href="#4、零标志ZF-Zero-Flag" class="headerlink" title="4、零标志ZF(Zero Flag)"></a>4、零标志ZF(Zero Flag)</h2><p>零标志ZF用来反映运算结果是否为0。如果运算结果为0，则其值为1，否则其值为0。在判断运算结果是否为0时，可使用此标志位。</p>
+<h2 id="5、符号标志SF-Sign-Flag"><a href="#5、符号标志SF-Sign-Flag" class="headerlink" title="5、符号标志SF(Sign Flag)"></a>5、符号标志SF(Sign Flag)</h2><p>符号标志SF用来反映运算结果的符号位，它与运算结果的最高位相同。在微机系统中，有符号数采用补码表示法，所以，SF也就反映运算结果的正负号。运算结果为正数时，SF的值为0，否则其值为1。</p>
+<h2 id="6、溢出标志OF-Overflow-Flag"><a href="#6、溢出标志OF-Overflow-Flag" class="headerlink" title="6、溢出标志OF(Overflow Flag)"></a>6、溢出标志OF(Overflow Flag)</h2><p>溢出标志OF用于反映有符号数加减运算所得结果是否溢出。如果运算结果超过当前运算位数所能表示的范围，则称为溢出，OF的值被置为1，否则，OF的值被清为0。</p>
+<p>“溢出”和“进位”是两个不同含义的概念，不要混淆。如果不太清楚的话，请查阅《计算机组成原理》课程中的有关章节。</p>
+<h2 id="二、状态控制标志位"><a href="#二、状态控制标志位" class="headerlink" title="二、状态控制标志位"></a>二、状态控制标志位</h2><p>状态控制标志位是用来控制CPU操作的，它们要通过专门的指令才能使之发生改变。</p>
+<h2 id="1、追踪标志TF-Trap-Flag"><a href="#1、追踪标志TF-Trap-Flag" class="headerlink" title="1、追踪标志TF(Trap Flag)"></a>1、追踪标志TF(Trap Flag)</h2><p>当追踪标志TF被置为1时，CPU进入单步执行方式，即每执行一条指令，产生一个单步中断请求。这种方式主要用于程序的调试。</p>
+<p>指令系统中没有专门的指令来改变标志位TF的值，但程序员可用其它办法来改变其值。</p>
+<h2 id="2、中断允许标志IF-Interrupt-enable-Flag"><a href="#2、中断允许标志IF-Interrupt-enable-Flag" class="headerlink" title="2、中断允许标志IF(Interrupt-enable Flag)"></a>2、中断允许标志IF(Interrupt-enable Flag)</h2><p>中断允许标志IF是用来决定CPU是否响应CPU外部的可屏蔽中断发出的中断请求。但不管该标志为何值，CPU都必须响应CPU外部的不可屏蔽中断所发出的中断请求，以及CPU内部产生的中断请求。具体规定如下：</p>
+<ul>
+<li>(1)、当IF=1时，CPU可以响应CPU外部的可屏蔽中断发出的中断请求；</li>
+<li>(2)、当IF=0时，CPU不响应CPU外部的可屏蔽中断发出的中断请求。<br>CPU的指令系统中也有专门的指令来改变标志位IF的值。</li>
+</ul>
+<h2 id="3、方向标志DF-Direction-Flag"><a href="#3、方向标志DF-Direction-Flag" class="headerlink" title="3、方向标志DF(Direction Flag)"></a>3、方向标志DF(Direction Flag)</h2><p>方向标志DF用来决定在串操作指令执行时有关指针寄存器发生调整的方向。在微机的指令系统中，还提供了专门的指令来改变标志位DF的值。</p>
 
     </div>
 
@@ -316,7 +331,7 @@
     <strong>本文作者： </strong>晚来秋</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lhxhl.github.io/2019/10/13/sd/" title="插入图片">https://lhxhl.github.io/2019/10/13/sd/</a>
+    <a href="https://lhxhl.github.io/2019/10/13/a/" title="标志寄存器">https://lhxhl.github.io/2019/10/13/a/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -331,9 +346,11 @@
           
           <div class="post-tags">
             
+              <a href="/tags/逆向学习/" rel="tag"># 逆向学习</a>
+            
               <a href="/tags/搬砖工/" rel="tag"># 搬砖工</a>
             
-              <a href="/tags/学习/" rel="tag"># 学习</a>
+              <a href="/tags/汇编/" rel="tag"># 汇编</a>
             
           </div>
         
@@ -343,8 +360,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/08/30/First_Test/" rel="next" title="8086汇编(一)">
-                  <i class="fa fa-chevron-left"></i> 8086汇编(一)
+                <a href="/2019/10/13/ss/" rel="next" title="80386汇编(一)">
+                  <i class="fa fa-chevron-left"></i> 80386汇编(一)
                 </a>
               
             </div>
@@ -352,10 +369,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/13/ss/" rel="prev" title="80386汇编(一)">
-                  80386汇编(一) <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -404,7 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-使用网络图片"><span class="nav-number">1.</span> <span class="nav-text">Hexo 使用网络图片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">1.1.</span> <span class="nav-text">方法:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图床设置"><span class="nav-number">1.1.1.</span> <span class="nav-text">图床设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是测试"><span class="nav-number">1.1.2.</span> <span class="nav-text">以下是测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-number">1.2.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用的图床"><span class="nav-number">1.3.</span> <span class="nav-text">使用的图床</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EFlags"><span class="nav-number">1.</span> <span class="nav-text">EFlags</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、运算结果标志位"><span class="nav-number">1.1.</span> <span class="nav-text">一、运算结果标志位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、进位标志CF-Carry-Flag"><span class="nav-number">1.2.</span> <span class="nav-text">1、进位标志CF(Carry Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、奇偶标志PF-Parity-Flag"><span class="nav-number">1.3.</span> <span class="nav-text">2、奇偶标志PF(Parity Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、辅助进位标志AF-Auxiliary-Carry-Flag"><span class="nav-number">1.4.</span> <span class="nav-text">3、辅助进位标志AF(Auxiliary Carry Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、零标志ZF-Zero-Flag"><span class="nav-number">1.5.</span> <span class="nav-text">4、零标志ZF(Zero Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、符号标志SF-Sign-Flag"><span class="nav-number">1.6.</span> <span class="nav-text">5、符号标志SF(Sign Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、溢出标志OF-Overflow-Flag"><span class="nav-number">1.7.</span> <span class="nav-text">6、溢出标志OF(Overflow Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、状态控制标志位"><span class="nav-number">1.8.</span> <span class="nav-text">二、状态控制标志位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、追踪标志TF-Trap-Flag"><span class="nav-number">1.9.</span> <span class="nav-text">1、追踪标志TF(Trap Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、中断允许标志IF-Interrupt-enable-Flag"><span class="nav-number">1.10.</span> <span class="nav-text">2、中断允许标志IF(Interrupt-enable Flag)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、方向标志DF-Direction-Flag"><span class="nav-number">1.11.</span> <span class="nav-text">3、方向标志DF(Direction Flag)</span></a></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
