@@ -55,19 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="汇编中的运算">
-<meta name="keywords" content="逆向学习,搬砖工,汇编">
+  <meta name="description" content="高中生/CTFer/二进制萌新">
+<meta name="keywords" content="高中生&#x2F;CTFer&#x2F;二进制萌新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="80386汇编(一)">
-<meta property="og:url" content="https://lhxhl.github.io/2019/10/13/ss/index.html">
+<meta property="og:title" content="晚来秋">
+<meta property="og:url" content="https://lhxhl.github.io/2019/12/14/b/index.html">
 <meta property="og:site_name" content="晚来秋">
-<meta property="og:description" content="汇编中的运算">
+<meta property="og:description" content="高中生/CTFer/二进制萌新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-13T08:46:53.774Z">
+<meta property="og:updated_time" content="2019-12-14T13:37:40.913Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="80386汇编(一)">
-<meta name="twitter:description" content="汇编中的运算">
-  <link rel="canonical" href="https://lhxhl.github.io/2019/10/13/ss/">
+<meta name="twitter:title" content="晚来秋">
+<meta name="twitter:description" content="高中生/CTFer/二进制萌新">
+  <link rel="canonical" href="https://lhxhl.github.io/2019/12/14/b/">
 
 
 <script id="page-configurations">
@@ -81,7 +81,7 @@
   };
 </script>
 
-  <title>80386汇编(一) | 晚来秋</title>
+  <title> | 晚来秋</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -220,7 +220,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://lhxhl.github.io/2019/10/13/ss/">
+    <link itemprop="mainEntityOfPage" href="https://lhxhl.github.io/2019/12/14/b/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="晚来秋">
@@ -232,7 +232,7 @@
       <meta itemprop="name" content="晚来秋">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">80386汇编(一)
+        <h1 class="post-title" itemprop="name headline">
 
           
         </h1>
@@ -248,24 +248,7 @@
                 
               
 
-              <time title="创建时间：2019-10-13 12:26:17 / 修改时间：16:46:53" itemprop="dateCreated datePublished" datetime="2019-10-13T12:26:17+08:00">2019-10-13</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reserve/" itemprop="url" rel="index"><span itemprop="name">Reserve</span></a></span>
-
-                
-                
-              
+              <time title="创建时间：2019-12-14 21:37:40" itemprop="dateCreated datePublished" datetime="2019-12-14T21:37:40+08:00">2019-12-14</time>
             </span>
           
 
@@ -288,190 +271,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="汇编中的运算"><a href="#汇编中的运算" class="headerlink" title="汇编中的运算"></a>汇编中的运算</h1><a id="more"></a>
-<ul>
-<li><h2 id="加法运算"><a href="#加法运算" class="headerlink" title="加法运算"></a>加法运算</h2><blockquote>
-<p>ADD dst,src //加法</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>ADC //带进位加法</p>
-</blockquote>
-<blockquote>
-<p>INC dst //自增</p>
-</blockquote>
-<ul>
-<li><h2 id="减法运算"><a href="#减法运算" class="headerlink" title="减法运算"></a>减法运算</h2><blockquote>
-<p>SUB dst,src //减法</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>DEC dst //自减</p>
-</blockquote>
-<ul>
-<li><h2 id="乘法运算"><a href="#乘法运算" class="headerlink" title="乘法运算"></a>乘法运算</h2>MUL是无符号乘法指令,IMUL是带符号乘法指令<blockquote>
-<p>MUL / IMUL dst</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="此指令有点特殊，需要区别记忆。"><a href="#此指令有点特殊，需要区别记忆。" class="headerlink" title="此指令有点特殊，需要区别记忆。"></a>此指令有点特殊，需要区别记忆。</h3><ul>
-<li><p>在32位下，规定寄存器EAX为乘数，dst为被乘数，其结果最大为64位，所以把EDX作为结果的高位，EAX作为结果的低位，即EDX:EAX。</p>
-</li>
-<li><p>在16位下，规定寄存器AX为乘数，dst为被乘数，其结果最大为32位，DX作为结果的高位，AX作为结果的低位，即DX:AX。</p>
-</li>
-<li><p>在8位下，规定寄存器AL为乘数，dst为被乘数，其结果最大为16位存放于AX。</p>
-</li>
-</ul>
-<p>例如:</p>
-<blockquote>
-<p>MOV EDX,6    // 寄存器EDX赋值6</p>
-</blockquote>
-<blockquote>
-<p>MOV EAX,2    // 寄存器EAX赋值2</p>
-</blockquote>
-<blockquote>
-<p>MOV EBX,3    // 寄存器EBX赋值3</p>
-</blockquote>
-<blockquote>
-<p>MUL EBX    // 执行后，EBX * EAX = 2 * 3 = 6，寄存器EDX为0，寄存器EAX为6</p>
-</blockquote>
-<blockquote>
-<p>MOV EDX,6    // 寄存器EDX赋值6</p>
-</blockquote>
-<blockquote>
-<p>MOV EAX,2    // 寄存器EAX赋值2</p>
-</blockquote>
-<blockquote>
-<p>MOV EBX,3    // 寄存器EBX赋值3</p>
-</blockquote>
-<blockquote>
-<p>MUL BL    // 执行后，BL * AL = 2 * 3 = 6，寄存器EDX不受影响，值为6，寄存器AX为6</p>
-</blockquote>
-<ul>
-<li><h2 id="除法运算"><a href="#除法运算" class="headerlink" title="除法运算"></a>除法运算</h2><blockquote>
-<p>DIV / IDIV dst //同乘法 无符号与带符号</p>
-</blockquote>
-</li>
-</ul>
-<p>此指令有点特殊，需要区别记忆。</p>
-<ul>
-<li>在32位下，规定EDX:EAX为被除数，dst为除数，其商放于寄存器EAX，余数放于寄存器EDX；</li>
-<li>在16位下，规定DX:AX为被除数，dst为除数，其商放于寄存器AX，余数放于寄存器DX；</li>
-<li>在8位下，规定AX为被除数，dst为除数，其商放于寄存器AL，余数放于寄存器AH.</li>
-</ul>
-<p>例如:</p>
-<blockquote>
-<p>MOV EDX,0    // 寄存器EDX赋值0</p>
-</blockquote>
-<blockquote>
-<p>MOV EAX,7    // 寄存器EAX赋值7</p>
-</blockquote>
-<blockquote>
-<p>MOV EBX,2    // 寄存器EBX赋值2</p>
-</blockquote>
-<blockquote>
-<p>DIV EBX    // 执行后，EDX:EAX / EBX = 7 / 2 = 3 % 1，EAX值为3，EDX值为1</p>
-</blockquote>
-<blockquote>
-<p>MOV EDX,6    // 寄存器EDX赋值6</p>
-</blockquote>
-<blockquote>
-<p>MOV EAX,7    // 寄存器EAX赋值7</p>
-</blockquote>
-<blockquote>
-<p>MOV EBX,2    // 寄存器EBX赋值2</p>
-</blockquote>
-<blockquote>
-<p>DIV BL    // 执行后，AX / BL = 7 / 2 = 3 % 1，AL值为3，AH值为1，AX的值为0x103</p>
-</blockquote>
-<h2 id="以上则是数学运算"><a href="#以上则是数学运算" class="headerlink" title="以上则是数学运算"></a>以上则是数学运算</h2><h2 id="分界线———————————————"><a href="#分界线———————————————" class="headerlink" title="分界线———————————————-"></a>分界线———————————————-</h2><h2 id="逻辑运算"><a href="#逻辑运算" class="headerlink" title="逻辑运算"></a>逻辑运算</h2><ul>
-<li><h2 id="AND逻辑与"><a href="#AND逻辑与" class="headerlink" title="AND逻辑与"></a>AND逻辑与</h2><blockquote>
-<p>AND dst,src</p>
-</blockquote>
-</li>
-<li><p>把dst与src进行逻辑与操作，位同时为1则设为1，其他情况设为0，伪C代码dst &amp;= src，例如：</p>
-<blockquote>
-<p>MOV AL,30    // 寄存器AL赋值00110000(0x30)</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>MOV BL,25    // 寄存器BL赋值00100101(0x25)</p>
-</blockquote>
-<blockquote>
-<p>AND AL,BL    // AL = AL &amp; BL = 100000(0x20)</p>
-</blockquote>
-<p>0 and 0 = 0</p>
-<p>0 and 1 = 0</p>
-<p>1 and 0 = 0</p>
-<p>1 and 1 = 1</p>
-<ul>
-<li><h2 id="OR逻辑或"><a href="#OR逻辑或" class="headerlink" title="OR逻辑或"></a>OR逻辑或</h2><blockquote>
-<p>OR dst,src</p>
-</blockquote>
-</li>
-<li><p>把dst与src进行逻辑或操作，位同时为0则设为0，其他情况设为1，伪C代码dst |= src，例如：</p>
-<blockquote>
-<p>MOV AL,30    // 寄存器AL赋值00110000(0x30)</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>MOV BL,25    // 寄存器BL赋值00100101(0x25)</p>
-</blockquote>
-<blockquote>
-<p>OR AL,BL    // AL = AL | BL = 00110101(0x35)</p>
-</blockquote>
-<p>0 or 0 = 0</p>
-<p>0 or 1 = 1</p>
-<p>1 or 0 = 1</p>
-<p>1 or 1 = 1</p>
-<ul>
-<li><h2 id="XOR逻辑异或"><a href="#XOR逻辑异或" class="headerlink" title="XOR逻辑异或"></a>XOR逻辑异或</h2><blockquote>
-<p>XOR dst,src</p>
-</blockquote>
-</li>
-<li><p>把dst与src进行逻辑异或操作，位相同时设为0，相反时设为1，伪C代码dst ^= src，例如：</p>
-<blockquote>
-<p>MOV AL,30    // 寄存器AL赋值00110000(0x30)</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>MOV BL,25    // 寄存器BL赋值00100101(0x25)</p>
-</blockquote>
-<blockquote>
-<p>XOR AL,BL    // AL = AL ^ BL = 0010101(0x15)</p>
-</blockquote>
-<blockquote>
-<p>XOR AL,BL    // AL = AL ^ BL = 00110000(0x30)，执行两次之后会还原原值，多用于可解密加密</p>
-</blockquote>
-<blockquote>
-<p>XOR AL,AL    // AL = AL ^ AL = 0，多用于清0寄存器</p>
-</blockquote>
-<p>0 xor 0 = 0</p>
-<p>0 xor 1 = 1</p>
-<p>1 xor 0 = 1</p>
-<p>1 xor 1 = 0</p>
-<ul>
-<li><h2 id="NOT逻辑非"><a href="#NOT逻辑非" class="headerlink" title="NOT逻辑非"></a>NOT逻辑非</h2><blockquote>
-<p>NOT src</p>
-</blockquote>
-</li>
-<li><p>把src进行逻辑非操作，所有位设为相反，伪C代码src ~= src，例如：</p>
-<blockquote>
-<p>MOV AL,30    // 寄存器AL赋值00110000(0x30)</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>NOT AL    // AL = ~AL = 11001111(0xCF)</p>
-</blockquote>
-<p>NOT 0 = 1</p>
-<p>NOT 1 = 0</p>
-
+        
     </div>
 
     
@@ -487,7 +287,7 @@
     <strong>本文作者： </strong>晚来秋</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lhxhl.github.io/2019/10/13/ss/" title="80386汇编(一)">https://lhxhl.github.io/2019/10/13/ss/</a>
+    <a href="https://lhxhl.github.io/2019/12/14/b/">https://lhxhl.github.io/2019/12/14/b/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -497,27 +297,14 @@
       
 
       <footer class="post-footer">
-          
-            
-          
-          <div class="post-tags">
-            
-              <a href="/tags/逆向学习/" rel="tag"># 逆向学习</a>
-            
-              <a href="/tags/搬砖工/" rel="tag"># 搬砖工</a>
-            
-              <a href="/tags/汇编/" rel="tag"># 汇编</a>
-            
-          </div>
-        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/13/sd/" rel="next" title="插入图片">
-                  <i class="fa fa-chevron-left"></i> 插入图片
+                <a href="/2019/10/30/h/" rel="next" title="HOST文件">
+                  <i class="fa fa-chevron-left"></i> HOST文件
                 </a>
               
             </div>
@@ -526,8 +313,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/13/a/" rel="prev" title="标志寄存器">
-                  标志寄存器 <i class="fa fa-chevron-right"></i>
+                <a href="/2020/02/03/web/" rel="prev" title="WEB">
+                  WEB <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -577,8 +364,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#汇编中的运算"><span class="nav-number">1.</span> <span class="nav-text">汇编中的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#加法运算"><span class="nav-number">1.1.</span> <span class="nav-text">加法运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减法运算"><span class="nav-number">1.2.</span> <span class="nav-text">减法运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#乘法运算"><span class="nav-number">1.3.</span> <span class="nav-text">乘法运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#此指令有点特殊，需要区别记忆。"><span class="nav-number">1.3.1.</span> <span class="nav-text">此指令有点特殊，需要区别记忆。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除法运算"><span class="nav-number">1.4.</span> <span class="nav-text">除法运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上则是数学运算"><span class="nav-number">1.5.</span> <span class="nav-text">以上则是数学运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分界线———————————————"><span class="nav-number">1.6.</span> <span class="nav-text">分界线———————————————-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算"><span class="nav-number">1.7.</span> <span class="nav-text">逻辑运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AND逻辑与"><span class="nav-number">1.8.</span> <span class="nav-text">AND逻辑与</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OR逻辑或"><span class="nav-number">1.9.</span> <span class="nav-text">OR逻辑或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XOR逻辑异或"><span class="nav-number">1.10.</span> <span class="nav-text">XOR逻辑异或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOT逻辑非"><span class="nav-number">1.11.</span> <span class="nav-text">NOT逻辑非</span></a></li></ol></li></ol></div>
-        
       </div>
       <!--/noindex-->
 
